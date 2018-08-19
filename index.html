@@ -5,8 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
+    <!-- Added a link to font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Added a link to local css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 <body>
-    
+    <div class="row" style="height: 20px;"></div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="text-center">
+                <h4>Player's Heath : <span class="Player"></span></h4>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <h1>STAR WARS: The Return of the JQuery</h1>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-center">
+                <h4>Emeny's Heath : <span class="Emeny"></span></h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <div id="fighters-area">Fighter's Area</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <div id="defenders-line">Defender Area</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <div id="player">Player</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <div class="text-center">
+            <!-- Attack Button -->
+                <button id="attack-button" class="btn btn-primary btn-lg">FORWARD ATTACK</button>
+            </div>
+        </div>
+    <br>
+        <div class="col-md-3">
+            <div class="text-center">
+            <!-- Attack Button -->
+                <button id="counter-button" class="btn btn-primary btn-lg">COUNTER ATTACK</button>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
 </body>
 </html>
