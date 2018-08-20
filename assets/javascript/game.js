@@ -13,7 +13,7 @@
 // 9. User loses when users's HP is zero.
 // 10. We take away from the score when User defeats emenies
 
-//Declaring Who Gets The Variables For Force
+//Declaring Who Gets The Force Variables
 var chosenEnemy = []
 var chosenEnemy2 = []
 var chosenEnemy3 = []
@@ -71,15 +71,15 @@ function startGame () {
 
     isChosenPlayer = false;
     isChosenEmeny = false;
+
+    //Setting Up The Jedi Mind Tricks
     $('#attack-button').hide()
     $('#attack-button2').hide()
     $('#attack-button3').hide()
-
-
     $('#fighters-area').append(luke.image, rey.image, leia.image, yoda.image);
     $('#chose-hero').text('Choose Your Hero');
     
-
+    //Jedi Temple Line Up Before Kylo Hen And Farce Vader Killed Them All
     $('#fighters-area').on('click', "img[id = luke]", function(){
         chooseChar(luke);
         console.log(chooseChar);
@@ -132,13 +132,15 @@ function startGame () {
             console.log(chooseOpp);
         }
     });
-    // Choose Your Enemy
+
+    // "I've Got A Bad Feeling About This" [Opponent 1]
     $('#heros-area').on('click', "img[id = leia]", function(){
         // if (opp2.defendImage === 'assets/images/leia.jpg' || char.image === 'assets/images/leia.jpg') {
         //     $('#heros-area2').append(rey.image, luke.image);
         // } else {
         //     $('#heros-area2').append(rey.image, yoda.image);
         // }
+        $('#heros-area2').append(rey.image, luke.image);
         $('#heros-area').hide();
         $('#chose-enemy').hide();
         $('#chose-enemy2').text('Choose Your Next Challenge');
@@ -163,7 +165,7 @@ function startGame () {
     });
 
     $('#heros-area').on('click', "img[id = rey]", function(){
-        $('#heros-area2').append(yoda.image, leia.image);
+        $('#heros-area2').append(rey.image, leia.image);
         $('#heros-area').hide();
         $('#chose-enemy').hide();
         $('#chose-enemy2').text('Choose Your Next Challenge');
@@ -175,7 +177,7 @@ function startGame () {
         }
     });
     $('#heros-area').on('click', "img[id = luke]", function(){
-        $('#heros-area2').append(yoda.image, leia.image);
+        $('#heros-area2').append(luke.image, leia.image);
         $('#heros-area').hide();
         $('#chose-enemy').hide();
         $('#chose-enemy2').text('Choose Your Next Challenge');
@@ -187,117 +189,115 @@ function startGame () {
         }
     });
 
-
-        // Choose Your Enemy 2
-        $('#heros-area2').on('click', "img[id = leia]", function(){
-            $('#heros-area3').append(rey.image, luke.image);
-            $('#heros-area2').hide();
-            $('#chose-enemy2').hide();
-            $('#chose-enemy3').text('Choose Your Final Challenge');
-            $('#attack-button').hide()
-            $('#attack-button2').show()
+    // Choose Your Next Challenge With Farce Vader [Opponent 2]
+    $('#heros-area2').on('click', "img[id = leia]", function(){
+        $('#heros-area3').append(rey.image, luke.image);
+        $('#heros-area2').hide();
+        $('#chose-enemy2').hide();
+        $('#chose-enemy3').text('Choose Your Final Challenge');
+        $('#attack-button').hide()
+        $('#attack-button2').show()
+        chooseOpp2(leia);
+        console.log(chooseOpp2);
+            if (chooseChar == false) {
             chooseOpp2(leia);
             console.log(chooseOpp2);
-                if (chooseChar == false) {
-                chooseOpp2(leia);
-                console.log(chooseOpp2);
-            }
-        });
-        $('#heros-area2').on('click', "img[id = yoda]", function(){
-            $('#heros-area3').append(rey.image, leia.image);
-            $('#heros-area2').hide();
-            $('#chose-enemy2').hide();
-            $('#chose-enemy3').text('Choose Your Final Challenge');
-            $('#attack-button').hide()
-            $('#attack-button2').show()
+        }
+    });
+    $('#heros-area2').on('click', "img[id = yoda]", function(){
+        $('#heros-area3').append(rey.image, leia.image);
+        $('#heros-area2').hide();
+        $('#chose-enemy2').hide();
+        $('#chose-enemy3').text('Choose Your Final Challenge');
+        $('#attack-button').hide()
+        $('#attack-button2').show()
+        chooseOpp2(yoda);
+        console.log(chooseOpp2);
+            if (chooseChar == false) {
             chooseOpp2(yoda);
             console.log(chooseOpp2);
-                if (chooseChar == false) {
-                chooseOpp2(yoda);
-                console.log(chooseOpp2);
-            }
-        });
-    
-        $('#heros-area2').on('click', "img[id = rey]", function(){
-            $('#heros-area3').append(yoda.image, leia.image);
-            $('#heros-area2').hide();
-            $('#chose-enemy2').hide();
-            $('#chose-enemy3').text('Choose Your Final Challenge');
-            $('#attack-button').hide()
-            $('#attack-button2').show()
+        }
+    });
+
+    $('#heros-area2').on('click', "img[id = rey]", function(){
+        $('#heros-area3').append(yoda.image, leia.image);
+        $('#heros-area2').hide();
+        $('#chose-enemy2').hide();
+        $('#chose-enemy3').text('Choose Your Final Challenge');
+        $('#attack-button').hide()
+        $('#attack-button2').show()
+        chooseOpp2(rey);
+        console.log(chooseOpp2);
+            if (chooseChar == false) {
             chooseOpp2(rey);
             console.log(chooseOpp2);
-                if (chooseChar == false) {
-                chooseOpp2(rey);
-                console.log(chooseOpp2);
-            }
-        });
-        $('#heros-area2').on('click', "img[id = luke]", function(){
-            $('#heros-area3').append(yoda.image, leia.image);
-            $('#heros-area2').hide();
-            $('#chose-enemy2').hide();
-            $('#chose-enemy3').text('Choose Your Final Challenge');
-            $('#attack-button').hide()
-            $('#attack-button2').show()
+        }
+    });
+    $('#heros-area2').on('click', "img[id = luke]", function(){
+        $('#heros-area3').append(yoda.image, leia.image);
+        $('#heros-area2').hide();
+        $('#chose-enemy2').hide();
+        $('#chose-enemy3').text('Choose Your Final Challenge');
+        $('#attack-button').hide()
+        $('#attack-button2').show()
+        chooseOpp2(luke);
+        console.log(chooseOpp2);
+            if (chooseChar == false) {
             chooseOpp2(luke);
             console.log(chooseOpp2);
-                if (chooseChar == false) {
-                chooseOpp2(luke);
-                console.log(chooseOpp2);
-            }
-        });
+        }
+    });
 
-
-        // Choose Your Enemy 3
-        $('#heros-area3').on('click', "img[id = leia]", function(){
-            $('#heros-area3').hide();
-            $('#chose-enemy3').hide();
-            $('#attack-button2').hide()
-            $('#attack-button3').show()
+    // Choose Your Final Battle With The Grand Master SITH Lord (Or Should I Say CYST Lord) [Opponent 3]
+    $('#heros-area3').on('click', "img[id = leia]", function(){
+        $('#heros-area3').hide();
+        $('#chose-enemy3').hide();
+        $('#attack-button2').hide()
+        $('#attack-button3').show()
+        chooseOpp3(leia);
+        console.log(chooseOpp3);
+            if (chooseChar == false) {
             chooseOpp3(leia);
             console.log(chooseOpp3);
-                if (chooseChar == false) {
-                chooseOpp3(leia);
-                console.log(chooseOpp3);
-            }
-        });
-        $('#heros-area3').on('click', "img[id = yoda]", function(){
-            $('#heros-area3').hide();
-            $('#chose-enemy3').hide();
-            $('#attack-button2').hide()
-            $('#attack-button3').show()
+        }
+    });
+    $('#heros-area3').on('click', "img[id = yoda]", function(){
+        $('#heros-area3').hide();
+        $('#chose-enemy3').hide();
+        $('#attack-button2').hide()
+        $('#attack-button3').show()
+        chooseOpp3(yoda);
+        console.log(chooseOpp3);
+            if (chooseChar == false) {
             chooseOpp3(yoda);
             console.log(chooseOpp3);
-                if (chooseChar == false) {
-                chooseOpp3(yoda);
-                console.log(chooseOpp3);
-            }
-        });
-    
-        $('#heros-area3').on('click', "img[id = rey]", function(){
-            $('#heros-area3').hide();
-            $('#chose-enemy3').hide();
-            $('#attack-button2').hide()
-            $('#attack-button3').show()
+        }
+    });
+
+    $('#heros-area3').on('click', "img[id = rey]", function(){
+        $('#heros-area3').hide();
+        $('#chose-enemy3').hide();
+        $('#attack-button2').hide()
+        $('#attack-button3').show()
+        chooseOpp3(rey);
+        console.log(chooseOpp3);
+            if (chooseChar == false) {
             chooseOpp3(rey);
             console.log(chooseOpp3);
-                if (chooseChar == false) {
-                chooseOpp3(rey);
-                console.log(chooseOpp3);
-            }
-        });
-        $('#heros-area3').on('click', "img[id = luke]", function(){
-            $('#heros-area3').hide();
-            $('#chose-enemy3').hide();
-            $('#attack-button2').hide()
-            $('#attack-button3').show()
+        }
+    });
+    $('#heros-area3').on('click', "img[id = luke]", function(){
+        $('#heros-area3').hide();
+        $('#chose-enemy3').hide();
+        $('#attack-button2').hide()
+        $('#attack-button3').show()
+        chooseOpp3(luke);
+        console.log(chooseOpp3);
+            if (chooseChar == false) {
             chooseOpp3(luke);
             console.log(chooseOpp3);
-                if (chooseChar == false) {
-                chooseOpp3(luke);
-                console.log(chooseOpp3);
-            }
-        });
+        }
+    });
 };
 
 startGame()
@@ -340,6 +340,7 @@ function chooseOpp(opp)   {
     }
 }
 
+// "Do. Or do not. There is no try." Function
 function chooseOpp2(opp2)   {
     if (chosenEnemy2 == false)  {
         opponent2 = opp2;
@@ -365,6 +366,7 @@ function chooseOpp2(opp2)   {
     }
 }
 
+//"Final Battle With The Cyst Lord" Function
 function chooseOpp3(opp3)   {
     if (chosenEnemy3 == false)  {
         opponent3 = opp3;
@@ -390,7 +392,7 @@ function chooseOpp3(opp3)   {
     }
 }
 
-//"Take Ass Kick Names" Function (I know it's an Avengers: Infinity War reference but who cares since we're like Peter Pan role playing here)
+//"Take Ass Kick Names" Button (I know it's an Avengers: Infinity War reference but who cares since we're like Peter Pan role playing here)
 $('#attack-button').on("click", function(){
     lightSaber.play();
     if(opponent.health <= 0 && character.health >= 0) {
@@ -406,6 +408,7 @@ $('#attack-button').on("click", function(){
     }
 });
 
+//"Kick His ASS Sea BASS" Button (Yes, Dumb & Dumber. GREATEST Comedy EVER!)
 $('#attack-button2').on("click", function(){
     lightSaber.play();
     if(opponent2.health <= 0 && character.health >= 0) {
@@ -421,6 +424,7 @@ $('#attack-button2').on("click", function(){
     }
 });
 
+//"No. I am your father." Button
 $('#attack-button3').on("click", function(){
     lightSaber.play();
     if(opponent3.health <= 0 && character.health >= 0) {
@@ -436,7 +440,7 @@ $('#attack-button3').on("click", function(){
     }
 });
 
-//"Back To Jedi Training..Suck. You Do." Function
+//"Back To Jedi Training..Suck. You Do." Button
 $('#play-again-button').on('click', function () {
     location.reload();
 })
