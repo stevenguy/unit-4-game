@@ -13,16 +13,13 @@
 // 9. User loses when users's HP is zero.
 // 10. We take away from the score when User defeats emenies
 
-let emenyHealth = 150;
-let playerHealth = 150;
-
+//Declaring Who Gets The Variables For Force
 var chosenEnemy = []
 var chosenPlayer = []
 let isChosenPlayer = false;
 let isChosenEmeny = false;
-var opponent;
-var defeated = false; 
 
+//The Jedi & Sith Universe Array Object
 let characters = [
     rey = {
         name: 'rey',
@@ -66,12 +63,9 @@ let characters = [
     }
 ];
 
-
+//"The Choosing The Chosen One & Dark Lord" Function
 function startGame () {
 
-    // firstNumber = "";
-    // secondNumber = "";
-    // operator = "";   
     isChosenPlayer = false;
     isChosenEmeny = false;
 
@@ -128,8 +122,7 @@ function startGame () {
 
 startGame()
 
-
-//Choose character function
+//"The Chosen One Who Will Bring Balance To The Force" Function
 function chooseChar(char){
 
         chosenPlayer = true; 
@@ -149,8 +142,7 @@ function chooseChar(char){
 
 }
 
-
-//Chooses your enemy
+//"The Dark Lord Who Will Try To Lure The Chosen One To The Dark Side" Function
 function chooseOpp(char)   {
     if (chosenEnemy == false)  {
         opponent = char; 
@@ -164,14 +156,19 @@ function chooseOpp(char)   {
     }
 }
 
-// Use click to lower HP for emeny and player 
+//"Take Ass Kick Names" Function
 $("attack-button").on("click", function() {
-    emenyHealth--;
-    $("#emeny").text(emenyHealth);
+    char.health--;
+    $("#emeny-health").text(emenyHealth);
     console.log(emenyHealth)
 });
 
-// restart game function
+
+// win or lose 
+
+
+
+//"Back To Jedi Training..Suck. You Do." Function
 $('#play-again-button').on('click', function () {
     $("#defenders-line, #player-area, #player-name, #player-health, #player-attack, #player-attack-back, #emeny-area, #emeny-name, #emeny-health, #emeny-attack, #emeny-attack-back").empty();
     $('#heros-area').show();
