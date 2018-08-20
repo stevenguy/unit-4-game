@@ -2,6 +2,29 @@
     height: 200px;
 }
 
+.row1 {
+    height: auto;
+}
+
 h1 {
     text-align: center;
+}
+
+img {
+    height: 200px;
+    width: 250px;
+    padding: 5px;
+}
+
+ .bg {
+    /* The image used */
+    background-image: url("jedi-backgrounds-7.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -15,67 +15,99 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
-<body>
+
+<body> 
+    <div class="bg"></div>
     <div class="row" style="height: 20px;"></div>
     <div class="row">
         <div class="col-md-3">
+            <div class="text-left" style="margin: 10px;">
+                <h5>Player's Name : <span id="player-name"></span></h5>
+                <h5>Player's Heath : <span id="player-health"></span></h5>
+                <h5>Player's Attack : <span id="player-attack"></span></h5>
+                <h5>Player's Attack Back : <span id="player-attack-back"></span></h5>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row" style="height: 100px;">
+                <div class="text-center">
+                    <h1>STAR WARS: The Return of the JQuery</h1>
+                </div>
+            </div>
+            <div class="row" style="height: 20px;">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <!-- PLAY AGAIN Button -->
+                        <button id="play-again-button" class="btn btn-primary btn-lg">FORCE RESTART</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-left" style="margin: 10px;">
+                <h5>Emeny's Name : <span id="emeny-name"></span></h5>
+                <h5>Emeny's Health : <span id="emeny-health"></span></h5>
+                <h5>Emeny's Attack : <span id="emeny-attack"></span></h5>
+                <h5>Emeny's Attack Back : <span id="emeny-attack-back"></span></h5>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="height: 30px;">
+        <div class="col-md-6">
             <div class="text-center">
-                <h4>Player's Heath : <span class="Player"></span></h4>
+                <div id="chose-line">Chose Your Hero</div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="text-center">
-                <h1>STAR WARS: The Return of the JQuery</h1>
+                <div id="chose-line">Chose Your Emeny</div>
             </div>
         </div>
-        <div class="col-md-3">
+    </div>
+    <div class="row">
+        <div class="col-md-6">
             <div class="text-center">
-                <h4>Emeny's Heath : <span class="Emeny"></span></h4>
+                <div id="fighters-area"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <div id="heros-area"></div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="text-center">
-                <div id="fighters-area">Fighter's Area</div>
+                <div id="defenders-line"></div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="text-center">
-                <div id="defenders-line">Defender Area</div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="text-center">
-                <div id="player">Player</div>
+                <div id="player-area"></div>
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-3">
+        <br>
+        <div class="col-md-6">
             <div class="text-center">
-            <!-- Attack Button -->
-                <button id="attack-button" class="btn btn-primary btn-lg">FORWARD ATTACK</button>
+            <!-- Forward Attack Button -->
+                <button id="attack-button" class="btn btn-primary btn-lg">ATTACK</button>
             </div>
         </div>
-    <br>
-        <div class="col-md-3">
-            <div class="text-center">
-            <!-- Attack Button -->
-                <button id="counter-button" class="btn btn-primary btn-lg">COUNTER ATTACK</button>
-            </div>
-        </div>
+        <br>
         <div class="col-md-3"></div>
     </div>
+    <div class="row1" style="height: 100px;">
+    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/game.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 </html>
