@@ -79,114 +79,113 @@ function startGame () {
     $('#fighters-area').append(luke.image, rey.image, obiwan.image, leia.image, yoda.image);
     $('#chose-hero').text('Choose Your Hero');
 
-        $('#fighters-area').on('click', "img[id = luke]", function(){
-            chooseChar(luke);
-            console.log(chooseChar);
-            $('#heros-area').append(rey.image, obiwan.image, leia.image, yoda.image);
-            $('#chose-enemy').text('Choose Your Enemy');
-            $('#chose-hero').hide();
-            $('#fighters-area').hide();
-                if (chooseOpp === false) {
-                chooseOpp(luke);
-                console.log(chooseOpp);
-            }
-        });
-        $('#fighters-area').on('click', "img[id = rey]", function(){
-            chooseChar(rey);
-            console.log(chooseChar);
-            $('#heros-area').append(luke.image, obiwan.image, leia.image, yoda.image);
-            $('#chose-enemy').text('Choose Your Enemy');
-            $('#chose-hero').hide();
-            $('#fighters-area').hide();
-                if (chooseOpp === false) {
-                chooseOpp(rey);
-                console.log(chooseOpp);
-            }
-        });
-        $('#fighters-area').on('click', "img[id = obiwan]", function(){
-            chooseChar(obiwan);
-            console.log(chooseChar);
-            $('#heros-area').append(rey.image, luke.image, leia.image, yoda.image);
-            $('#chose-enemy').text('Choose Your Enemy');
-            $('#chose-hero').hide();
-            $('#fighters-area').hide();
-                if (chooseOpp === false) {
-                chooseOpp(obiwan);
-                console.log(chooseOpp);
-            }
-        });
-        $('#fighters-area').on('click', "img[id = leia]", function(){
-            chooseChar(leia);
-            console.log(chooseChar);
-            $('#heros-area').append(rey.image, obiwan.image, luke.image, yoda.image);
-            $('#chose-enemy').text('Choose Your Enemy');
-            $('#chose-hero').hide();
-            $('#fighters-area').hide();
-                if (chooseOpp === false) {
-                chooseOpp(leia);
-                console.log(chooseOpp);
-            }
-        });
-        $('#fighters-area').on('click', "img[id = yoda]", function(){
-            chooseChar(yoda);
-            console.log(chooseChar);
-            $('#heros-area').append(rey.image, obiwan.image, luke.image, leia.image);
-            $('#chose-enemy').text('Choose Your Enemy');
-            $('#chose-hero').hide();
-            $('#fighters-area').hide();
-                if (chooseOpp === false) {
-                chooseOpp(yoda);
-                console.log(chooseOpp);
-            }
-        });
-        // Choose Your Enemy
-        $('#heros-area').on('click', "img[id = obiwan]", function(){
-            chooseOpp(obiwan);
-            $('img[id = obiwan]').hide();
-            console.log(chooseOpp);
-                if (chooseChar === false) {
-                chooseOpp(obiwan);
-                console.log(chooseOpp);
-            }
-        });
-        $('#heros-area').on('click', "img[id = leia]", function(){
-            chooseOpp(leia);
-            $('img[id = leia]').hide();
-            console.log(chooseOpp);
-                if (chooseChar == false) {
-                chooseOpp(leia);
-                console.log(chooseOpp);
-            }
-        });
-        $('#heros-area').on('click', "img[id = yoda]", function(){
-            chooseOpp(yoda);
-            $('img[id = yoda]').hide();
-            console.log(chooseOpp);
-                if (chooseChar == false) {
-                chooseOpp(yoda);
-                console.log(chooseOpp);
-            }
-        });
-
-        $('#heros-area').on('click', "img[id = rey]", function(){
-            chooseOpp(rey);
-            $('img[id = rey]').hide();
-            console.log(chooseOpp);
-                if (chooseChar == false) {
-                chooseOpp(rey);
-                console.log(chooseOpp);
-            }
-        });
-        $('#heros-area').on('click', "img[id = luke]", function(){
+    $('#fighters-area').on('click', "img[id = luke]", function(){
+        chooseChar(luke);
+        console.log(chooseChar);
+        $('#heros-area').append(rey.image, obiwan.image, leia.image, yoda.image);
+        $('#chose-enemy').text('Choose Your Enemy');
+        $('#chose-hero').hide();
+        $('#fighters-area').hide();
+            if (chooseOpp === false) {
             chooseOpp(luke);
-            $('img[id = luke]').hide();
             console.log(chooseOpp);
-                if (chooseChar == false) {
-                chooseOpp(luke);
-                console.log(chooseOpp);
-            }
-        });
-    
+        }
+    });
+    $('#fighters-area').on('click', "img[id = rey]", function(){
+        chooseChar(rey);
+        console.log(chooseChar);
+        $('#heros-area').append(luke.image, obiwan.image, leia.image, yoda.image);
+        $('#chose-enemy').text('Choose Your Enemy');
+        $('#chose-hero').hide();
+        $('#fighters-area').hide();
+            if (chooseOpp === false) {
+            chooseOpp(rey);
+            console.log(chooseOpp);
+        }
+    });
+    $('#fighters-area').on('click', "img[id = obiwan]", function(){
+        chooseChar(obiwan);
+        console.log(chooseChar);
+        $('#heros-area').append(rey.image, luke.image, leia.image, yoda.image);
+        $('#chose-enemy').text('Choose Your Enemy');
+        $('#chose-hero').hide();
+        $('#fighters-area').hide();
+            if (chooseOpp === false) {
+            chooseOpp(obiwan);
+            console.log(chooseOpp);
+        }
+    });
+    $('#fighters-area').on('click', "img[id = leia]", function(){
+        chooseChar(leia);
+        console.log(chooseChar);
+        $('#heros-area').append(rey.image, obiwan.image, luke.image, yoda.image);
+        $('#chose-enemy').text('Choose Your Enemy');
+        $('#chose-hero').hide();
+        $('#fighters-area').hide();
+            if (chooseOpp === false) {
+            chooseOpp(leia);
+            console.log(chooseOpp);
+        }
+    });
+    $('#fighters-area').on('click', "img[id = yoda]", function(){
+        chooseChar(yoda);
+        console.log(chooseChar);
+        $('#heros-area').append(rey.image, obiwan.image, luke.image, leia.image);
+        $('#chose-enemy').text('Choose Your Enemy');
+        $('#chose-hero').hide();
+        $('#fighters-area').hide();
+            if (chooseOpp === false) {
+            chooseOpp(yoda);
+            console.log(chooseOpp);
+        }
+    });
+    // Choose Your Enemy
+    $('#heros-area').on('click', "img[id = obiwan]", function(){
+        chooseOpp(obiwan);
+        $('img[id = obiwan]').hide();
+        console.log(chooseOpp);
+            if (chooseChar === false) {
+            chooseOpp(obiwan);
+            console.log(chooseOpp);
+        }
+    });
+    $('#heros-area').on('click', "img[id = leia]", function(){
+        chooseOpp(leia);
+        $('img[id = leia]').hide();
+        console.log(chooseOpp);
+            if (chooseChar == false) {
+            chooseOpp(leia);
+            console.log(chooseOpp);
+        }
+    });
+    $('#heros-area').on('click', "img[id = yoda]", function(){
+        chooseOpp(yoda);
+        $('img[id = yoda]').hide();
+        console.log(chooseOpp);
+            if (chooseChar == false) {
+            chooseOpp(yoda);
+            console.log(chooseOpp);
+        }
+    });
+
+    $('#heros-area').on('click', "img[id = rey]", function(){
+        chooseOpp(rey);
+        $('img[id = rey]').hide();
+        console.log(chooseOpp);
+            if (chooseChar == false) {
+            chooseOpp(rey);
+            console.log(chooseOpp);
+        }
+    });
+    $('#heros-area').on('click', "img[id = luke]", function(){
+        chooseOpp(luke);
+        $('img[id = luke]').hide();
+        console.log(chooseOpp);
+            if (chooseChar == false) {
+            chooseOpp(luke);
+            console.log(chooseOpp);
+        }
+    });
 };
 
 startGame()
