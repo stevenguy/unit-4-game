@@ -18,6 +18,10 @@ var chosenEnemy = []
 var chosenPlayer = []
 let isChosenPlayer = false;
 let isChosenEmeny = false;
+let character
+let opponent 
+let lightSaber = new Audio('assets/audio/light-saber-on.mp3');
+let attackSound = new Audio('assets/audio/blaster-firing.mp3');
 
 //The Jedi & Sith Universe Array Object
 let characters = [
@@ -69,12 +73,15 @@ function startGame () {
     isChosenPlayer = false;
     isChosenEmeny = false;
 
-    $('#fighters-area').append(luke.image, rey.image);
-    $('#heros-area').append(obiwan.image, leia.image, yoda.image);
+    $('#fighters-area').append(luke.image, rey.image, obiwan.image, leia.image, yoda.image);
+    $('#chose-hero').text('Choose Your Hero');
 
         $('#fighters-area').on('click', "img[id = luke]", function(){
             chooseChar(luke);
             console.log(chooseChar);
+            $('#heros-area').append(rey.image, obiwan.image, leia.image, yoda.image);
+            $('#chose-enemy').text('Choose Your Enemy');
+            $('#chose-hero').hide();
             $('#fighters-area').hide();
                 if (chooseOpp === false) {
                 chooseOpp(luke);
@@ -84,15 +91,55 @@ function startGame () {
         $('#fighters-area').on('click', "img[id = rey]", function(){
             chooseChar(rey);
             console.log(chooseChar);
+            $('#heros-area').append(luke.image, obiwan.image, leia.image, yoda.image);
+            $('#chose-enemy').text('Choose Your Enemy');
+            $('#chose-hero').hide();
             $('#fighters-area').hide();
                 if (chooseOpp === false) {
                 chooseOpp(rey);
                 console.log(chooseOpp);
             }
         });
+        $('#fighters-area').on('click', "img[id = obiwan]", function(){
+            chooseChar(obiwan);
+            console.log(chooseChar);
+            $('#heros-area').append(rey.image, luke.image, leia.image, yoda.image);
+            $('#chose-enemy').text('Choose Your Enemy');
+            $('#chose-hero').hide();
+            $('#fighters-area').hide();
+                if (chooseOpp === false) {
+                chooseOpp(obiwan);
+                console.log(chooseOpp);
+            }
+        });
+        $('#fighters-area').on('click', "img[id = leia]", function(){
+            chooseChar(leia);
+            console.log(chooseChar);
+            $('#heros-area').append(rey.image, obiwan.image, luke.image, yoda.image);
+            $('#chose-enemy').text('Choose Your Enemy');
+            $('#chose-hero').hide();
+            $('#fighters-area').hide();
+                if (chooseOpp === false) {
+                chooseOpp(leia);
+                console.log(chooseOpp);
+            }
+        });
+        $('#fighters-area').on('click', "img[id = yoda]", function(){
+            chooseChar(yoda);
+            console.log(chooseChar);
+            $('#heros-area').append(rey.image, obiwan.image, luke.image, leia.image);
+            $('#chose-enemy').text('Choose Your Enemy');
+            $('#chose-hero').hide();
+            $('#fighters-area').hide();
+                if (chooseOpp === false) {
+                chooseOpp(yoda);
+                console.log(chooseOpp);
+            }
+        });
+        // Choose Your Enemy
         $('#heros-area').on('click', "img[id = obiwan]", function(){
             chooseOpp(obiwan);
-            $('#heros-area').hide();
+            $('img[id = obiwan]').hide();
             console.log(chooseOpp);
                 if (chooseChar === false) {
                 chooseOpp(obiwan);
@@ -101,7 +148,7 @@ function startGame () {
         });
         $('#heros-area').on('click', "img[id = leia]", function(){
             chooseOpp(leia);
-            $('#heros-area').hide();
+            $('img[id = leia]').hide();
             console.log(chooseOpp);
                 if (chooseChar == false) {
                 chooseOpp(leia);
@@ -110,10 +157,29 @@ function startGame () {
         });
         $('#heros-area').on('click', "img[id = yoda]", function(){
             chooseOpp(yoda);
-            $('#heros-area').hide();
+            $('img[id = yoda]').hide();
             console.log(chooseOpp);
                 if (chooseChar == false) {
                 chooseOpp(yoda);
+                console.log(chooseOpp);
+            }
+        });
+
+        $('#heros-area').on('click', "img[id = rey]", function(){
+            chooseOpp(rey);
+            $('img[id = rey]').hide();
+            console.log(chooseOpp);
+                if (chooseChar == false) {
+                chooseOpp(rey);
+                console.log(chooseOpp);
+            }
+        });
+        $('#heros-area').on('click', "img[id = luke]", function(){
+            chooseOpp(luke);
+            $('img[id = luke]').hide();
+            console.log(chooseOpp);
+                if (chooseChar == false) {
+                chooseOpp(luke);
                 console.log(chooseOpp);
             }
         });
@@ -130,47 +196,56 @@ function chooseChar(char){
         console.log(character);
         $('#player-area').append(char.image);
         $('#player-name').append(char.name);
-        $('#player-health').append(char.health);
-        $('#player-attack').append(char.attack);
-        $('#player-attack-back').append(char.AttackBack);
-		for (let i = 0; i < characters.length; i++){
-			let enemy = "enemy"+i;  
-			if(characters[i].name != char.name){
-				$('#enemies').append("<div id ="+enemy+">"+characters[i].image+"</div>");
-            }
-        }
+        $('#player-health').append(parseInt(char.health));
+        console.log(parseInt(char.health));
+        $('#player-attack').append(parseInt(char.attack));
+        console.log(parseInt(char.attack));
+        $('#player-attack-back').append(parseInt(char.AttackBack));
+        console.log(parseInt(char.AttackBack));
 
 }
 
 //"The Dark Lord Who Will Try To Lure The Chosen One To The Dark Side" Function
-function chooseOpp(char)   {
+function chooseOpp(opp)   {
     if (chosenEnemy == false)  {
-        opponent = char; 
-        enemyChosen = true; 
-        // $('#defenders-line', '#emeny-name', '#emeny-health','#emeny-attack','#emeny-attack-back').empty(); 
-        $('#defenders-line').append(char.defendImage)
-        $('#emeny-name').append(char.name);
-        $('#emeny-health').append(char.health);
-        $('#emeny-attack').append(char.attack);
-        $('#emeny-attack-back').append(char.AttackBack);
+        opponent = opp;
+        chosenEnemy = true; 
+        $('#defenders-line', '#emeny-name', '#emeny-health','#emeny-attack','#emeny-attack-back').empty(); 
+        $('#results').text("YOU'VE BEEN ATTACKED! STRIKE BACK PADAWAN!")
+        $('#defenders-line').append(opp.defendImage)
+        $('#emeny-name').append(opp.name);
+        $('#emeny-health').append(parseInt(opp.health));
+        console.log(parseInt(opp.health));
+        $('#emeny-attack').append(parseInt(opp.attack));
+        console.log(parseInt(opp.attack));
+        $('#emeny-attack-back').append(parseInt(opp.AttackBack));
+        console.log(parseInt(opp.AttackBack));
+        $('#player-health').empty();
+        $('#player-health').append(parseInt(character.health = parseInt(character.health) - parseInt(opponent.AttackBack)));
+        console.log(parseInt(character.health = parseInt(character.health) - parseInt(opponent.AttackBack)))
+        attackSound.play();
     }
 }
 
 //"Take Ass Kick Names" Function
-$("attack-button").on("click", function() {
-    char.health--;
-    $("#emeny-health").text(emenyHealth);
-    console.log(emenyHealth)
+
+$('#attack-button').on("click", function(){
+    lightSaber.play();
+    if(opponent.health < 0 && character.health > 0) {
+        $('#results').text('You have won the battle. Next Opponent')
+        $('#defenders-line', '#emeny-name', '#emeny-health','#emeny-attack','#emeny-attack-back').empty(); 
+        chooseOpp()
+    } else if (opponent.health > 0 && character.health < 0) {
+        $('#results').text('You have loss the battle. Next')
+    } else {
+    $('#emeny-health').empty()
+    $('#emeny-health').append(parseInt(opponent.health = parseInt(opponent.health) - parseInt(character.attack)));
+    }
 });
-
-
-// win or lose 
-
 
 
 //"Back To Jedi Training..Suck. You Do." Function
 $('#play-again-button').on('click', function () {
-    $("#defenders-line, #player-area, #player-name, #player-health, #player-attack, #player-attack-back, #emeny-area, #emeny-name, #emeny-health, #emeny-attack, #emeny-attack-back").empty();
-    $('#heros-area').show();
-    $('#fighters-area').show();
+    location.reload();
+    $('#heros-area').hide();
 })
