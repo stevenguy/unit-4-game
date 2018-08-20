@@ -22,6 +22,9 @@ let character
 let opponent 
 let lightSaber = new Audio('assets/audio/light-saber-on.mp3');
 let attackSound = new Audio('assets/audio/blaster-firing.mp3');
+let R2D2 = new Audio('assets/audio/R2D2.mp3');
+let imperialMarch = new Audio('assets/audio/imperial_march.mp3');
+let force = new Audio('assets/audio/force.mp3');
 
 //The Jedi & Sith Universe Array Object
 let characters = [
@@ -190,18 +193,18 @@ startGame()
 
 //"The Chosen One Who Will Bring Balance To The Force" Function
 function chooseChar(char){
-
-        chosenPlayer = true; 
-        character = char;
-        console.log(character);
-        $('#player-area').append(char.image);
-        $('#player-name').append(char.name);
-        $('#player-health').append(parseInt(char.health));
-        console.log(parseInt(char.health));
-        $('#player-attack').append(parseInt(char.attack));
-        console.log(parseInt(char.attack));
-        $('#player-attack-back').append(parseInt(char.AttackBack));
-        console.log(parseInt(char.AttackBack));
+    R2D2.play()
+    chosenPlayer = true; 
+    character = char;
+    console.log(character);
+    $('#player-area').append(char.image);
+    $('#player-name').append(char.name);
+    $('#player-health').append(parseInt(char.health));
+    console.log(parseInt(char.health));
+    $('#player-attack').append(parseInt(char.attack));
+    console.log(parseInt(char.attack));
+    $('#player-attack-back').append(parseInt(char.AttackBack));
+    console.log(parseInt(char.AttackBack));
 
 }
 
@@ -231,18 +234,18 @@ function chooseOpp(opp)   {
 $('#attack-button').on("click", function(){
     lightSaber.play();
     if(opponent.health < 0 && character.health > 0) {
-        $('#results').text('You have won the battle. Next Opponent')
+        $('#results').text('You have WON the battle. Next Opponent')
         $('#defenders-line', '#emeny-name', '#emeny-health','#emeny-attack','#emeny-attack-back').empty(); 
+        force.play();
         chooseOpp()
     } else if (opponent.health > 0 && character.health < 0) {
-        $('#results').text('You have loss the battle. Next')
+        $('#results').text('You have LOSS the battle. Next')
+        imperialMarch.play();
     } else {
     $('#emeny-health').empty()
     $('#emeny-health').append(parseInt(opponent.health = parseInt(opponent.health) - parseInt(character.attack)));
     }
 });
-
-
 
 //"Back To Jedi Training..Suck. You Do." Function
 $('#play-again-button').on('click', function () {
