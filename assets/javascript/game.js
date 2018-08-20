@@ -210,7 +210,7 @@ function chooseOpp(opp)   {
     if (chosenEnemy == false)  {
         opponent = opp;
         chosenEnemy = true; 
-        $('#defenders-line', '#emeny-name', '#emeny-health','#emeny-attack','#emeny-attack-back').empty(); 
+        // $('#defenders-line', '#emeny-name', '#emeny-health','#emeny-attack','#emeny-attack-back').empty(); 
         $('#results').text("YOU'VE BEEN ATTACKED! STRIKE BACK PADAWAN!")
         $('#defenders-line').append(opp.defendImage)
         $('#emeny-name').append(opp.name);
@@ -228,7 +228,6 @@ function chooseOpp(opp)   {
 }
 
 //"Take Ass Kick Names" Function
-
 $('#attack-button').on("click", function(){
     lightSaber.play();
     if(opponent.health < 0 && character.health > 0) {
@@ -242,6 +241,7 @@ $('#attack-button').on("click", function(){
     $('#emeny-health').append(parseInt(opponent.health = parseInt(opponent.health) - parseInt(character.attack)));
     }
 });
+
 
 
 //"Back To Jedi Training..Suck. You Do." Function
