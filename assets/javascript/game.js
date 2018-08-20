@@ -230,7 +230,7 @@ function chooseOpp(opp)   {
     }
 }
 
-//"Take Ass Kick Names" Function
+//"Take Ass Kick Names" Function (I know it's an Avengers: Infinity War reference but who cares since we're like Peter Pan role playing here)
 $('#attack-button').on("click", function(){
     lightSaber.play();
     if(opponent.health < 0 && character.health > 0) {
