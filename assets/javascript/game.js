@@ -557,8 +557,8 @@ $('#attack-button2').on("click", function(){
         imperialMarch.play();
     } else {
     $('#emeny-health').empty()
-    $('#emeny-health').append(parseInt(opponent2.health = parseInt(opponent2.health) - parseInt(character.attack)));
     $('#results').text('Keep going, Padawan. Use the Force')
+    $('#emeny-health').append(parseInt(opponent2.health = parseInt(opponent2.health) - parseInt(character.attack)));
     }
 });
 
