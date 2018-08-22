@@ -541,6 +541,7 @@ $('#attack-button').on("click", function(){
     } else {
     $('#emeny-health').empty()
     $('#emeny-health').append(parseInt(opponent.health = parseInt(opponent.health) - parseInt(character.attack)));
+    $('#results').text('Keep going, Padawan. Use the Force')
     }
 });
 
@@ -557,6 +558,7 @@ $('#attack-button2').on("click", function(){
     } else {
     $('#emeny-health').empty()
     $('#emeny-health').append(parseInt(opponent2.health = parseInt(opponent2.health) - parseInt(character.attack)));
+    $('#results').text('Keep going, Padawan. Use the Force')
     }
 });
 
@@ -573,6 +575,7 @@ $('#attack-button3').on("click", function(){
     } else {
     $('#emeny-health').empty()
     $('#emeny-health').append(parseInt(opponent3.health = parseInt(opponent3.health) - parseInt(character.attack)));
+    $('#results').text('Keep going, Padawan. Use the Force')
     }
 });
 
