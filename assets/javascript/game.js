@@ -531,6 +531,7 @@ function chooseOpp3(opp3)   {
 //"Take Ass Kick Names" Button (I know it's an Avengers: Infinity War reference but who cares since we're like Peter Pan role playing here)
 $('#attack-button').on("click", function(){
     lightSaber.play();
+    $('#results').text('Keep going, Padawan. Use the Force!')
     if(opponent.health <= 0 && character.health >= 0) {
         $('#results').text('You have WON the battle. Next Opponent')
         force.play();
@@ -541,13 +542,13 @@ $('#attack-button').on("click", function(){
     } else {
     $('#emeny-health').empty()
     $('#emeny-health').append(parseInt(opponent.health = parseInt(opponent.health) - parseInt(character.attack)));
-    $('#results').text('Keep going, Padawan. Use the Force')
     }
 });
 
 //"Kick His ASS Sea BASS" Button (Yes, Dumb & Dumber. GREATEST Comedy EVER!)
 $('#attack-button2').on("click", function(){
     lightSaber.play();
+    $('#results').text('Keep going, Padawan. Use the Force!')
     if(opponent2.health <= 0 && character.health >= 0) {
         $('#results').text('You have WON the battle. Next Opponent')
         force.play();
@@ -557,7 +558,6 @@ $('#attack-button2').on("click", function(){
         imperialMarch.play();
     } else {
     $('#emeny-health').empty()
-    $('#results').text('Keep going, Padawan. Use the Force')
     $('#emeny-health').append(parseInt(opponent2.health = parseInt(opponent2.health) - parseInt(character.attack)));
     }
 });
@@ -565,6 +565,7 @@ $('#attack-button2').on("click", function(){
 //"No. I am your father." Button
 $('#attack-button3').on("click", function(){
     lightSaber.play();
+    $('#results').text('Keep going, Padawan. Use the Force!')
     if(opponent3.health <= 0 && character.health >= 0) {
         $('#results').text('You have WON the battle. Next Opponent')
         force.play();
@@ -574,7 +575,6 @@ $('#attack-button3').on("click", function(){
         imperialMarch.play();
     } else {
     $('#emeny-health').empty()
-    $('#results').text('Keep going, Padawan. Use the Force')
     $('#emeny-health').append(parseInt(opponent3.health = parseInt(opponent3.health) - parseInt(character.attack)));
     }
 });
