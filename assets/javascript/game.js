@@ -13,7 +13,7 @@
 // 9. User loses when users's HP is zero.
 // 10. We take away from the score when User defeats emenies
 
-//Declaring Who Gets The Force Variables
+//Declaring Who Gets The Force Variables or Not
 var chosenEnemy = []
 var chosenEnemy2 = []
 var chosenEnemy3 = []
@@ -21,6 +21,7 @@ var chosenPlayer = []
 let isChosenPlayer = false;
 let isChosenEmeny = false;
 let character
+let opponents = ['leia','rey','yoda','luke']
 let opponent 
 let opponent2 
 let opponent3 
@@ -80,49 +81,46 @@ function startGame () {
     $('#chose-hero').text('Choose Your Hero');
     
     //Jedi Temple Line Up Before Kylo Hen And Farce Vader Killed Them All
-    $('#fighters-area').on('click', "img[id = luke]", function(){
-        chooseChar(luke);
-        console.log(chooseChar);
-        $('#heros-area').append(rey.image, leia.image, yoda.image);
-        $('#chose-enemy').text('Choose Your First Challenge');
-        $('#attack-button').show()
-        $('#chose-hero').hide();
-        $('#fighters-area').hide();
-            if (chooseOpp === false) {
-            chooseOpp(luke);
-            console.log(chooseOpp);
+
+   $('#fighters-area img').on('click', function(){
+        let str = $(this).attr('id')
+
+        console.log(str);
+
+        //chooseChar(yoda);
+        switch(str){
+            case 'rey':
+                chooseChar(rey)
+                break
+            case 'yoda':
+                chooseChar(yoda)
+                break
+            case 'leia':
+                chooseChar(leia)
+                break
+            case 'luke':
+                chooseChar(luke)
+                break
         }
-    });
-    $('#fighters-area').on('click', "img[id = rey]", function(){
-        chooseChar(rey);
-        console.log(chooseChar);
-        $('#heros-area').append(luke.image, leia.image, yoda.image);
-        $('#chose-enemy').text('Choose Your First Challenge');
-        $('#attack-button').show()
-        $('#chose-hero').hide();
-        $('#fighters-area').hide();
-            if (chooseOpp === false) {
-            chooseOpp(rey);
-            console.log(chooseOpp);
+        opponents.splice(opponents.indexOf(str), 1)
+        //$('#heros-area').append(rey.image, luke.image, leia.image);
+        for(i=0;i<opponents.length;i++){
+            //start switch
+            switch(opponents[i]){
+                case 'rey':
+                    $('#heros-area').append(rey.image)
+                    break
+                case 'yoda':
+                    $('#heros-area').append(yoda.image)
+                    break
+                case 'leia':
+                    $('#heros-area').append(leia.image)
+                    break
+                case 'luke':
+                    $('#heros-area').append(luke.image)
+                    break
+            }
         }
-    });
-    $('#fighters-area').on('click', "img[id = leia]", function(){
-        chooseChar(leia);
-        console.log(chooseChar);
-        $('#heros-area').append(rey.image, luke.image, yoda.image);
-        $('#chose-enemy').text('Choose Your First Challenge');
-        $('#attack-button').show()
-        $('#chose-hero').hide();
-        $('#fighters-area').hide();
-            if (chooseOpp === false) {
-            chooseOpp(leia);
-            console.log(chooseOpp);
-        }
-    });
-    $('#fighters-area').on('click', "img[id = yoda]", function(){
-        chooseChar(yoda);
-        console.log(chooseChar);
-        $('#heros-area').append(rey.image, luke.image, leia.image);
         $('#chose-enemy').text('Choose Your First Challenge');
         $('#attack-button').show()
         $('#chose-hero').hide();
@@ -133,14 +131,29 @@ function startGame () {
         }
     });
 
+
+
     // "I've Got A Bad Feeling About This" [Opponent 1]
     $('#heros-area').on('click', "img[id = leia]", function(){
-        // if (opp2.defendImage === 'assets/images/leia.jpg' || char.image === 'assets/images/leia.jpg') {
-        //     $('#heros-area2').append(rey.image, luke.image);
-        // } else {
-        //     $('#heros-area2').append(rey.image, yoda.image);
-        // }
-        $('#heros-area2').append(rey.image, luke.image);
+        opponents.splice(opponents.indexOf('leia'), 1)
+        console.log(opponents)
+        for(i=0;i<opponents.length;i++){
+            //start switch
+            switch(opponents[i]){
+                case 'rey':
+                    $('#heros-area2').append(rey.image)
+                    break
+                case 'yoda':
+                    $('#heros-area2').append(yoda.image)
+                    break
+                case 'leia':
+                    $('#heros-area2').append(leia.image)
+                    break
+                case 'luke':
+                    $('#heros-area2').append(luke.image)
+                    break
+            }
+        }
         $('#heros-area').hide();
         $('#chose-enemy').hide();
         $('#chose-enemy2').text('Choose Your Next Challenge');
@@ -152,7 +165,24 @@ function startGame () {
         }
     });
     $('#heros-area').on('click', "img[id = yoda]", function(){
-        $('#heros-area2').append(rey.image, leia.image);
+        opponents.splice(opponents.indexOf('yoda'), 1)
+        for(i=0;i<opponents.length;i++){
+            //start switch
+            switch(opponents[i]){
+                case 'rey':
+                    $('#heros-area2').append(rey.image)
+                    break
+                case 'yoda':
+                    $('#heros-area2').append(yoda.image)
+                    break
+                case 'leia':
+                    $('#heros-area2').append(leia.image)
+                    break
+                case 'luke':
+                    $('#heros-area2').append(luke.image)
+                    break
+            }
+        }
         $('#heros-area').hide();
         $('#chose-enemy').hide();
         $('#chose-enemy2').text('Choose Your Next Challenge');
@@ -165,7 +195,24 @@ function startGame () {
     });
 
     $('#heros-area').on('click', "img[id = rey]", function(){
-        $('#heros-area2').append(rey.image, leia.image);
+        opponents.splice(opponents.indexOf('rey'), 1)
+        for(i=0;i<opponents.length;i++){
+            //start switch
+            switch(opponents[i]){
+                case 'rey':
+                    $('#heros-area2').append(rey.image)
+                    break
+                case 'yoda':
+                    $('#heros-area2').append(yoda.image)
+                    break
+                case 'leia':
+                    $('#heros-area2').append(leia.image)
+                    break
+                case 'luke':
+                    $('#heros-area2').append(luke.image)
+                    break
+            }
+        }
         $('#heros-area').hide();
         $('#chose-enemy').hide();
         $('#chose-enemy2').text('Choose Your Next Challenge');
@@ -177,7 +224,25 @@ function startGame () {
         }
     });
     $('#heros-area').on('click', "img[id = luke]", function(){
-        $('#heros-area2').append(luke.image, leia.image);
+
+        opponents.splice(opponents.indexOf('luke'), 1)
+        for(i=0;i<opponents.length;i++){
+            //start switch
+            switch(opponents[i]){
+                case 'rey':
+                    $('#heros-area2').append(rey.image)
+                    break
+                case 'yoda':
+                    $('#heros-area2').append(yoda.image)
+                    break
+                case 'leia':
+                    $('#heros-area2').append(leia.image)
+                    break
+                case 'luke':
+                    $('#heros-area2').append(luke.image)
+                    break
+            }
+        }
         $('#heros-area').hide();
         $('#chose-enemy').hide();
         $('#chose-enemy2').text('Choose Your Next Challenge');
@@ -191,7 +256,24 @@ function startGame () {
 
     // Choose Your Next Challenge With Farce Vader [Opponent 2]
     $('#heros-area2').on('click', "img[id = leia]", function(){
-        $('#heros-area3').append(rey.image, luke.image);
+        opponents.splice(opponents.indexOf('leia'), 1)
+        for(i=0;i<opponents.length;i++){
+            //start switch
+            switch(opponents[i]){
+                case 'rey':
+                    $('#heros-area3').append(rey.image)
+                    break
+                case 'yoda':
+                    $('#heros-area3').append(yoda.image)
+                    break
+                case 'leia':
+                    $('#heros-area3').append(leia.image)
+                    break
+                case 'luke':
+                    $('#heros-area3').append(luke.image)
+                    break
+            }
+        }
         $('#heros-area2').hide();
         $('#chose-enemy2').hide();
         $('#chose-enemy3').text('Choose Your Final Challenge');
@@ -205,7 +287,25 @@ function startGame () {
         }
     });
     $('#heros-area2').on('click', "img[id = yoda]", function(){
-        $('#heros-area3').append(rey.image, leia.image);
+
+        opponents.splice(opponents.indexOf('yoda'), 1)
+        for(i=0;i<opponents.length;i++){
+            //start switch
+            switch(opponents[i]){
+                case 'rey':
+                    $('#heros-area3').append(rey.image)
+                    break
+                case 'yoda':
+                    $('#heros-area3').append(yoda.image)
+                    break
+                case 'leia':
+                    $('#heros-area3').append(leia.image)
+                    break
+                case 'luke':
+                    $('#heros-area3').append(luke.image)
+                    break
+            }
+        }
         $('#heros-area2').hide();
         $('#chose-enemy2').hide();
         $('#chose-enemy3').text('Choose Your Final Challenge');
@@ -220,7 +320,25 @@ function startGame () {
     });
 
     $('#heros-area2').on('click', "img[id = rey]", function(){
-        $('#heros-area3').append(yoda.image, leia.image);
+
+        opponents.splice(opponents.indexOf('rey'), 1)
+        for(i=0;i<opponents.length;i++){
+            //start switch
+            switch(opponents[i]){
+                case 'rey':
+                    $('#heros-area3').append(rey.image)
+                    break
+                case 'yoda':
+                    $('#heros-area3').append(yoda.image)
+                    break
+                case 'leia':
+                    $('#heros-area3').append(leia.image)
+                    break
+                case 'luke':
+                    $('#heros-area3').append(luke.image)
+                    break
+            }
+        }
         $('#heros-area2').hide();
         $('#chose-enemy2').hide();
         $('#chose-enemy3').text('Choose Your Final Challenge');
@@ -234,7 +352,25 @@ function startGame () {
         }
     });
     $('#heros-area2').on('click', "img[id = luke]", function(){
-        $('#heros-area3').append(yoda.image, leia.image);
+
+        opponents.splice(opponents.indexOf('luke'), 1)
+        for(i=0;i<opponents.length;i++){
+            //start switch
+            switch(opponents[i]){
+                case 'rey':
+                    $('#heros-area3').append(rey.image)
+                    break
+                case 'yoda':
+                    $('#heros-area3').append(yoda.image)
+                    break
+                case 'leia':
+                    $('#heros-area3').append(leia.image)
+                    break
+                case 'luke':
+                    $('#heros-area3').append(luke.image)
+                    break
+            }
+        }
         $('#heros-area2').hide();
         $('#chose-enemy2').hide();
         $('#chose-enemy3').text('Choose Your Final Challenge');

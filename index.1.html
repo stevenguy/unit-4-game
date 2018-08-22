@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <!-- Added a link to font awesome how awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Added a link to local css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body> 
+    <div class="bg"></div>
+    <div class="row" style="height: 20px;"></div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="text-left" style="margin: 10px;">
+                <h5>Player's Name : <span id="player-name"></span></h5>
+                <h5>Player's Heath : <span id="player-health"></span></h5>
+                <h5>Player's Attack : <span id="player-attack"></span></h5>
+                <h5>Player's Attack Back : <span id="player-attack-back"></span></h5>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row" style="height: 100px;">
+                <div class="text-center">
+                    <h1>STAR WARS: The Return of the JQuery</h1>
+                </div>
+            </div>
+            <div class="row" style="height: 50px;">
+                <div class="text-center">
+                    <h3><span id="results"></span></h3>
+                </div>
+            </div>
+            <div class="row" style="height: 20px;">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <!-- PLAY AGAIN Button -->
+                        <button id="play-again-button" class="btn btn-primary btn-lg">FORCE RESTART</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-left" style="margin: 10px;">
+                <h5>Emeny's Name : <span id="emeny-name"></span><span id="emeny-name2"></span><span id="emeny-name3"></span></h5>
+                <h5>Emeny's Health : <span id="emeny-health"></span><span id="emeny-health2"></span><span id="emeny-health3"></span></h5>
+                <h5>Emeny's Attack : <span id="emeny-attack"></span><span id="emeny-attack2"></span><span id="emeny-attack3"></span></h5>
+                <h5>Emeny's Attack Back : <span id="emeny-attack-back"></span><span id="emeny-attack-back2"></span><span id="emeny-attack-back3"></span></h5>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="height: 30px;">
+        <div class="col-md-3">
+            <div class="text-center">
+                <div> <span id="chose-hero"></span></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-center">
+                <div> <span id="chose-enemy"></span></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-center">
+                <div> <span id="chose-enemy2"></span></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-center">
+                <div> <span id="chose-enemy3"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="text-center">
+                <div id="fighters-area"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-center">
+                <div id="heros-area"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-center">
+                <div id="heros-area2"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-center">
+                <div id="heros-area3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <div id="defenders-line"></div>
+                <div id="defenders-line2"></div>
+                <div id="defenders-line3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <div id="player-area"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <br>
+        <div class="col-md-6">
+            <div class="text-center">
+            <!-- Forward Attack Button -->
+                <button id="attack-button" class="btn btn-primary btn-lg">JEDI ATTACK</button>
+                <button id="attack-button2" class="btn btn-primary btn-lg">JEDI ATTACK</button>
+                <button id="attack-button3" class="btn btn-primary btn-lg">JEDI ATTACK</button>
+            </div>
+        </div>
+        <br>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row1" style="height: 100px;">
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+</html>
