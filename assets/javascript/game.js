@@ -122,7 +122,6 @@ function startGame () {
             }
         }
         $('#chose-enemy').text('Choose Your First Challenge');
-        $('#attack-button').show()
         $('#chose-hero').hide();
         $('#fighters-area').hide();
             if (chooseOpp === false) {
@@ -155,6 +154,7 @@ function startGame () {
         $('#heros-area').hide();
         $('#heros-area2').hide();
         $('#chose-enemy').hide();
+        $('#attack-button').show()
         chooseOpp(leia);
         console.log(chooseOpp);
             if (chooseChar == false) {
@@ -184,6 +184,7 @@ function startGame () {
         $('#heros-area').hide();
         $('#heros-area2').hide();
         $('#chose-enemy').hide();
+        $('#attack-button').show()
         chooseOpp(yoda);
         console.log(chooseOpp);
             if (chooseChar == false) {
@@ -214,6 +215,7 @@ function startGame () {
         $('#heros-area').hide();
         $('#heros-area2').hide();
         $('#chose-enemy').hide();
+        $('#attack-button').show()
         chooseOpp(rey);
         console.log(chooseOpp);
             if (chooseChar == false) {
@@ -244,6 +246,7 @@ function startGame () {
         $('#heros-area').hide();
         $('#heros-area2').hide();
         $('#chose-enemy').hide();
+        $('#attack-button').show()
         chooseOpp(luke);
         console.log(chooseOpp);
             if (chooseChar == false) {
@@ -531,7 +534,7 @@ $('#attack-button').on("click", function(){
     lightSaber.play();
     $('#results').text('Keep going, Padawan. Use the Force!')
     if(opponent.health <= 0 && character.health >= 0) {
-        $('#results').text('You have WON the battle. Next Opponent')
+        $('#results').text('You have WON the battle. Choose Your Next Challenge')
         force.play();
         $('#heros-area2').show();
         $('#chose-enemy2').text('Choose Your Next Challenge');
@@ -550,7 +553,7 @@ $('#attack-button2').on("click", function(){
     lightSaber.play();
     $('#results').text('Keep going, Padawan. Use the Force!')
     if(opponent2.health <= 0 && character.health >= 0) {
-        $('#results').text('You have WON the battle. Next Opponent')
+        $('#results').text('You have WON the battle. Choose Your Final Challenge.')
         $('#heros-area3').show();
         $('#chose-enemy3').text('Choose Your Final Challenge');
         force.play();
