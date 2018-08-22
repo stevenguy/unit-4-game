@@ -153,8 +153,8 @@ function startGame () {
             }
         }
         $('#heros-area').hide();
+        $('#heros-area2').hide();
         $('#chose-enemy').hide();
-        $('#chose-enemy2').text('Choose Your Next Challenge');
         chooseOpp(leia);
         console.log(chooseOpp);
             if (chooseChar == false) {
@@ -182,8 +182,8 @@ function startGame () {
             }
         }
         $('#heros-area').hide();
+        $('#heros-area2').hide();
         $('#chose-enemy').hide();
-        $('#chose-enemy2').text('Choose Your Next Challenge');
         chooseOpp(yoda);
         console.log(chooseOpp);
             if (chooseChar == false) {
@@ -212,8 +212,8 @@ function startGame () {
             }
         }
         $('#heros-area').hide();
+        $('#heros-area2').hide();
         $('#chose-enemy').hide();
-        $('#chose-enemy2').text('Choose Your Next Challenge');
         chooseOpp(rey);
         console.log(chooseOpp);
             if (chooseChar == false) {
@@ -242,8 +242,8 @@ function startGame () {
             }
         }
         $('#heros-area').hide();
+        $('#heros-area2').hide();
         $('#chose-enemy').hide();
-        $('#chose-enemy2').text('Choose Your Next Challenge');
         chooseOpp(luke);
         console.log(chooseOpp);
             if (chooseChar == false) {
@@ -273,8 +273,8 @@ function startGame () {
             }
         }
         $('#heros-area2').hide();
+        $('#heros-area3').hide();
         $('#chose-enemy2').hide();
-        $('#chose-enemy3').text('Choose Your Final Challenge');
         $('#attack-button').hide()
         $('#attack-button2').show()
         chooseOpp2(leia);
@@ -305,8 +305,8 @@ function startGame () {
             }
         }
         $('#heros-area2').hide();
+        $('#heros-area3').hide();
         $('#chose-enemy2').hide();
-        $('#chose-enemy3').text('Choose Your Final Challenge');
         $('#attack-button').hide()
         $('#attack-button2').show()
         chooseOpp2(yoda);
@@ -338,8 +338,8 @@ function startGame () {
             }
         }
         $('#heros-area2').hide();
+        $('#heros-area3').hide();
         $('#chose-enemy2').hide();
-        $('#chose-enemy3').text('Choose Your Final Challenge');
         $('#attack-button').hide()
         $('#attack-button2').show()
         chooseOpp2(rey);
@@ -370,8 +370,8 @@ function startGame () {
             }
         }
         $('#heros-area2').hide();
+        $('#heros-area3').hide();
         $('#chose-enemy2').hide();
-        $('#chose-enemy3').text('Choose Your Final Challenge');
         $('#attack-button').hide()
         $('#attack-button2').show()
         chooseOpp2(luke);
@@ -533,6 +533,8 @@ $('#attack-button').on("click", function(){
     if(opponent.health <= 0 && character.health >= 0) {
         $('#results').text('You have WON the battle. Next Opponent')
         force.play();
+        $('#heros-area2').show();
+        $('#chose-enemy2').text('Choose Your Next Challenge');
         chooseOpp()
     } else if (opponent.health >= 0 && character.health <= 0) {
         $('#results').text('You have LOSS the battle. Next')
@@ -549,6 +551,8 @@ $('#attack-button2').on("click", function(){
     $('#results').text('Keep going, Padawan. Use the Force!')
     if(opponent2.health <= 0 && character.health >= 0) {
         $('#results').text('You have WON the battle. Next Opponent')
+        $('#heros-area3').show();
+        $('#chose-enemy3').text('Choose Your Final Challenge');
         force.play();
         chooseOpp()
     } else if (opponent2.health >= 0 && character.health <= 0) {
@@ -565,7 +569,7 @@ $('#attack-button3').on("click", function(){
     lightSaber.play();
     $('#results').text('Keep going, Padawan. Use the Force!')
     if(opponent3.health <= 0 && character.health >= 0) {
-        $('#results').text('You have WON the battle. Next Opponent')
+        $('#results').text('You have WON the WAR. Press FORCE RESTART to play again')
         force.play();
         chooseOpp()
     } else if (opponent3.health >= 0 && character.health <= 0) {
