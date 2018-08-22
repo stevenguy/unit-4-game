@@ -1,6 +1,7 @@
 .row,
 .row1 {
     height: auto;
+    padding: 10px;
 }
 
 h1 {
@@ -17,18 +18,3 @@ img {
     text-align: center;
 }
 
-#chose-hero,
-#chose-enemy,
-#chose-enemy2,
-#chose-enemy3,
-#fighters-area,
-#heros-area,
-#heros-area2
-#heros-area3,
-#defenders-line,
-#defenders-line2,
-#defenders-line3,
-#player-area, {
-    height: auto;
-    padding: 20px;
-}

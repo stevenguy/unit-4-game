@@ -131,8 +131,6 @@ function startGame () {
         }
     });
 
-
-
     // "I've Got A Bad Feeling About This" [Opponent 1]
     $('#heros-area').on('click', "img[id = leia]", function(){
         opponents.splice(opponents.indexOf('leia'), 1)
@@ -502,7 +500,7 @@ function chooseOpp2(opp2)   {
     }
 }
 
-//"Final Battle With The Cyst Lord" Function
+//"Final Battle With The CYST Lord" Function
 function chooseOpp3(opp3)   {
     if (chosenEnemy3 == false)  {
         opponent3 = opp3;
